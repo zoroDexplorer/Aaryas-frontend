@@ -1,0 +1,14 @@
+#bgc {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      rgba(255, 140, 0, 0.562), /* Top gradient color with opacity */
+      rgba(255, 140, 0, 0.563)  /* Bottom gradient color with opacity */
+    ), url('../img/WhatsApp\ Image\ 2024-08-05\ at\ 10.23.27_f8a1f56e.jpg'); /* Background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
