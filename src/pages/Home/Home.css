@@ -1,0 +1,171 @@
+.bg-black {
+  background-color: #000;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Example CSS */
+.menu-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+
+.menu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu-item p {
+  margin-top: 8px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bg-gray-900 {
+  background-color: #1a1a1a;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-orange-500 {
+  color: #fb923c;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.relative {
+  position: relative;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-gray-800 {
+  background-color: #2d2d2d;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
+.top-1/2 {
+  top: 50%;
+}
+
+.transform {
+  transform: translateY(-50%);
+}
+
+.-translate-y-1/2 {
+  --tw-translate-y: -50%;
+  transform: translateY(var(--tw-translate-y));
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* Additional styles for pointer events */
+.avatar {
+  pointer-events: none;
+}
+
+.ring-container {
+  cursor: pointer;
+  pointer-events: auto;
+}
