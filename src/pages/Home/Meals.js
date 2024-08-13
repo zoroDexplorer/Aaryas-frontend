@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useContext,useEffect } from 'react';
 import './Item.css';
+import { CartContext } from '../CartContext'; 
+import { toast } from 'react-toastify';
 
-const Chinese = () => {
+const Meals = () => {
+  const { addToCart } = useContext(CartContext);
+
   const items = [
-    { id: 1, name: 'Veg Meals', price: '70/-', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHaoapAZLNd4jPLNVTtr0z6mISq9eWEUGwdw&s' },
-    { id: 2, name: 'Non Veg Meals', price: '95/-', image: 'https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg' },
+    { id: 1, name: 'Veg Meals', price: 70, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHaoapAZLNd4jPLNVTtr0z6mISq9eWEUGwdw&s' },
+    { id: 2, name: 'Non Veg Meals', price: 95, image: 'https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg' },
   ];
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleBackClick = () => {
-    window.location.href = '/';
+    window.location.href = '/home';
+  };
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    toast.success(`${item.name} added to cart!`);
   };
 
   return (
@@ -27,8 +38,11 @@ const Chinese = () => {
               </div>
               <div className="flex flex-col items-center">
                 <h3 className="mt-2 font-bold text-orange-500">{item.name}</h3>
-                <p className="text-white">{item.price}</p>
-                <button className="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-orange-600">
+                <p className="text-white">₹{item.price}</p>
+                <button 
+                  className="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-orange-600"
+                  onClick={() => handleAddToCart(item)}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -40,4 +54,4 @@ const Chinese = () => {
   );
 };
 
-export default Chinese;
+export default Meals;

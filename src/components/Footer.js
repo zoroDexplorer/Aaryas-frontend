@@ -12,9 +12,9 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-orange-600 text-white fixed bottom-0 w-full flex justify-around items-center p-2">
-      <div className="relative flex-1 flex justify-center" onClick={() => navigate('/')}>
-        <div className={`cursor-pointer ${getButtonClass('/')}`}>
+    <div className="bg-orange-600 text-white fixed bottom-0 w-full flex justify-around items-center">
+      <div className="relative flex-1 flex justify-center" onClick={() => navigate('/home')}>
+        <div className={`cursor-pointer ${getButtonClass('/home')}`}>
           <Home className="w-6 h-6" />
         </div>
       </div>

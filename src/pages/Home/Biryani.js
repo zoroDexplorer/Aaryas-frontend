@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Item.css'; // Assuming you have additional styles here if needed
+import { CartContext } from '../CartContext'; // Adjust the path if needed
+import { toast } from 'react-toastify';
 
 const Biryani = () => {
+  const { addToCart } = useContext(CartContext);
   const items = [
-    { id: 1, name: 'Veg Biryani', price: '150/-', image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2021/04/biryani-recipe-1.jpg' },
-    { id: 2, name: 'Chicken Fry Biryani', price: '230/-', image: 'https://recipes.net/wp-content/uploads/2023/05/chicken-biryani-recipe_a4e111d2dc037d303d5a149c106bb96e.jpeg' },
-    { id: 3, name: 'Chicken Dum Biryani', price: '230/-', image: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2012/10/chicken-dum-biryani-500x375.jpg' },
-    { id: 4, name: 'Mutton Biryani', price: '350/-', image: 'https://artofpalate.com/wp-content/uploads/2020/06/mutton-biryani.jpg' },
-    { id: 5, name: 'Prawn Biryani', price: '350/-', image: 'https://www.kannammacooks.com/wp-content/uploads/prawn-biryani-eral-biriyani-recipe-1.jpg' },
-    { id: 6, name: 'Fish Biryani', price: '350/-', image: 'https://ipoh.hyderabadrecipes.com.my/wp-content/uploads/2022/07/Fish-Biryani.jpg' },
+    { id: 1, name: 'Veg Biryani', price: 150, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2021/04/biryani-recipe-1.jpg' },
+    { id: 2, name: 'Chicken Fry Biryani', price: 230, image: 'https://recipes.net/wp-content/uploads/2023/05/chicken-biryani-recipe_a4e111d2dc037d303d5a149c106bb96e.jpeg' },
+    { id: 3, name: 'Chicken Dum Biryani', price: 230, image: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2012/10/chicken-dum-biryani-500x375.jpg' },
+    { id: 4, name: 'Mutton Biryani', price: 350, image: 'https://artofpalate.com/wp-content/uploads/2020/06/mutton-biryani.jpg' },
+    { id: 5, name: 'Prawn Biryani', price: 350, image: 'https://www.kannammacooks.com/wp-content/uploads/prawn-biryani-eral-biriyani-recipe-1.jpg' },
+    { id: 6, name: 'Fish Biryani', price: 350, image: 'https://ipoh.hyderabadrecipes.com.my/wp-content/uploads/2022/07/Fish-Biryani.jpg' },
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleBackClick = () => {
-    window.location.href = '/';
+    window.location.href = '/home';
+  };
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    toast.success(`${item.name} added to cart!`);
   };
 
   return (
@@ -31,8 +42,11 @@ const Biryani = () => {
               </div>
               <div className="flex flex-col items-center">
                 <h3 className="mt-2 font-bold text-orange-500">{item.name}</h3>
-                <p className="text-white">{item.price}</p>
-                <button className="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-orange-600">
+                <p className="text-white">₹{item.price}</p>
+                <button 
+                  className="bg-orange-500 text-white px-4 py-2 rounded mt-2 hover:bg-orange-600"
+                  onClick={() => handleAddToCart(item)}
+                >
                   Add to Cart
                 </button>
               </div>

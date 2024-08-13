@@ -1,14 +1,12 @@
 import React from 'react';
-import './Home.css';
+import Footer from '../../components/Footer';
 import { useNavigate } from 'react-router-dom';
-
 const Home = () => {
   const navigate = useNavigate();
-
   return (
-    <div className="bg-black min-h-screen text-white pb-16">
+    <div className="flex flex-col min-h-screen bg-black text-white">
       {/* Main content */}
-      <main className="p-4">
+      <main className="flex-grow p-4">
         <h1 className="text-2xl font-bold mb-4">
           Enjoy Our <span className="text-orange-500">😋</span><br />
           <span className="text-orange-500">Delicious Food</span>
@@ -31,7 +29,7 @@ const Home = () => {
           <h2 className="text-xl font-bold mb-2">Special Offer</h2>
           <div className="rounded-lg text-black p-2">
             <img
-              src="/assets/offer.jpg" // Replace this with the actual path to your image
+              src="/img/offer.jpg" // Replace this with the actual path to your image
               alt="Special Food Menu"
               className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto h-auto rounded-lg mb-2"
             />
@@ -43,7 +41,7 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/biryani')}>
               <div className="ring-container">
-                <img src="/assets/biryani-removebg-preview.png" alt="Biryani's" className="w-24 h-24 mx-auto mb-2 " />
+                <img src="/img/biryani-removebg-preview.png" alt="Biryani's" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Biryani's</p>
             </div>
@@ -51,7 +49,7 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/chinese')}>
               <div className="ring-container">
-                <img src="/assets/chinese-removebg-preview.png" alt="Chinese" className="w-24 h-24 mx-auto mb-2 " />
+                <img src="/img/chinese-removebg-preview.png" alt="Chinese" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Chinese</p>
             </div>
@@ -59,7 +57,7 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/tiffins')}>
               <div className="ring-container">
-                <img src="/assets/tiffins-removebg-preview.png" alt="Tiffin's" className="w-24 h-24 mx-auto mb-2 " />
+                <img src="/img/tiffins-removebg-preview.png" alt="Tiffin's" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Tiffin's</p>
             </div>
@@ -67,7 +65,7 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/meals')}>
               <div className="ring-container">
-                <img src="/assets/meals-removebg-preview.png" alt="Meals" className="w-24 h-24 mx-auto mb-2 r" />
+                <img src="/img/meals-removebg-preview.png" alt="Meals" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Meals</p>
             </div>
@@ -75,7 +73,7 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/snacks')}>
               <div className="ring-container">
-                <img src="/assets/snacks-removebg-preview.png" alt="Snacks" className="w-24 h-24 mx-auto mb-2 " />
+                <img src="/img/snacks-removebg-preview.png" alt="Snacks" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Snacks</p>
             </div>
@@ -83,13 +81,16 @@ const Home = () => {
           <div className="flex justify-center">
             <div className="text-center cursor-pointer" onClick={() => navigate('/cakes')}>
               <div className="ring-container">
-                <img src="/assets/cakes-removebg-preview.png" alt="Cakes" className="w-24 h-24 mx-auto mb-2 " />
+                <img src="/img/cakes-removebg-preview.png" alt="Cakes" className="w-24 h-24 mx-auto mb-2" />
               </div>
               <p className="text-sm">Cakes</p>
             </div>
           </div>
         </div>
       </main>
+      <div className='mt-10'>
+      <Footer />
+      </div>
     </div>
   );
 };
